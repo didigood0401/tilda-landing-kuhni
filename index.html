@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кухни «Линия» - лендинг на Tilda, демо</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8ebe9;--card:#f6f7f6;--ink:#17191b;--mut:#565c60;--acc:#c4512f;--m:clamp(16px,2.6vw,44px);--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Manrope,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--m)}
+header{position:sticky;top:0;z-index:30;background:rgba(232,235,233,.92);backdrop-filter:blur(8px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font:700 20px Unbounded;letter-spacing:-.03em;text-decoration:none}.logo span{color:var(--acc)}
+nav{display:flex;gap:22px;font-size:15px}nav a{text-decoration:none;color:var(--mut)}nav a:hover{color:var(--ink)}
+.tg{display:flex;align-items:center;gap:8px;font:600 13px Manrope;color:var(--mut);cursor:pointer;user-select:none}
+.tg i{width:38px;height:22px;border-radius:20px;background:#c9cecb;position:relative;transition:background .25s}
+.tg i::after{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .25s var(--ease)}
+.tg.on i{background:var(--acc)}.tg.on i::after{transform:translateX(16px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;border:0;padding:16px 26px;border-radius:14px;font:700 15px Manrope;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--acc)}
+/* hero/configurator */
+.hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(20px,3vw,48px);padding-top:clamp(28px,4vw,56px);align-items:start}
+h1{font:700 clamp(34px,4.3vw,64px)/1 Unbounded;letter-spacing:-.045em}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{font-size:19px;color:var(--mut);max-width:42ch;margin:20px 0 26px}
+.cfg{background:var(--card);border-radius:24px;padding:clamp(16px,2.4vw,28px)}
+.row{margin-bottom:18px}.row>b{display:block;font-size:14px;margin-bottom:8px}
+.len{display:flex;align-items:center;gap:14px}
+input[type=range]{flex:1;accent-color:var(--acc);height:28px}
+.len output{font:700 22px Unbounded;min-width:4.6em;text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1.5px solid #cfd4d1;background:#fff;border-radius:12px;padding:10px 14px;font:600 14px Manrope;cursor:pointer;display:flex;align-items:center;gap:8px;transition:border-color .2s,transform .2s var(--ease)}
+.chips button:hover{transform:translateY(-1px)}
+.chips button.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.chips s{width:16px;height:16px;border-radius:5px;display:inline-block;text-decoration:none}
+.iso{position:relative;aspect-ratio:16/10;border-radius:18px;background:linear-gradient(#dfe3e0,#d3d8d5);overflow:hidden;margin-bottom:16px}
+.iso svg{position:absolute;inset:0;width:100%;height:100%}
+.iso .dim{position:absolute;left:14px;top:12px;font:600 13px Manrope;color:var(--mut)}
+.mod{transition:transform .6s var(--ease),opacity .5s}
+.mod.new{transform:translateY(-40px);opacity:0}
+.sum{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;border-top:1px solid #dde1de;padding-top:16px}
+.sum small{display:block;color:var(--mut);font-size:13px}
+.price{font:700 clamp(28px,3vw,40px)/1 Unbounded;letter-spacing:-.04em}
+.split{font-size:13px;color:var(--mut);margin-top:6px}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:clamp(30px,5vw,70px)}.kp div{border-top:2px solid var(--ink);padding-top:12px;font-size:14px;color:var(--mut)}.kp b{display:block;font:700 clamp(26px,2.6vw,38px)/1.1 Unbounded;color:var(--ink);letter-spacing:-.04em}
+/* sections */
+section{padding-top:clamp(90px,10vw,140px);position:relative}
+h2{font:700 clamp(30px,3.8vw,54px)/1 Unbounded;letter-spacing:-.04em;max-width:18ch}
+.sub{color:var(--mut);max-width:52ch;margin:14px 0 34px;font-size:18px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:s}
+.st{background:var(--card);border-radius:20px;padding:24px;position:relative;overflow:hidden}
+.st .d{font:700 44px/1 Unbounded;letter-spacing:-.05em;color:var(--acc)}
+.st .d small{font:600 15px Manrope;color:var(--mut);letter-spacing:0}
+.st b{display:block;font-size:18px;margin:14px 0 6px}.st p{color:var(--mut);font-size:15px}
+.bar{height:6px;border-radius:3px;background:#dde1de;margin-top:18px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ink);width:0;transition:width 1.4s var(--ease)}
+.in .bar i{width:var(--w)}
+.mats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mat{border-radius:20px;overflow:hidden;background:var(--card)}
+.mat .sw{height:180px;position:relative}
+.mat .t{padding:20px}.mat b{font-size:19px}.mat p{color:var(--mut);font-size:15px;margin-top:4px}
+.mat .t span{display:block;font:700 18px Unbounded;margin-top:12px}
+.oak{background:repeating-linear-gradient(92deg,#b98b5e 0 7px,#a87b50 7px 9px,#c29667 9px 17px,#9f7148 17px 18px)}
+.enamel{background:linear-gradient(160deg,#5d6b62,#46524b)}
+.ldsp{background:linear-gradient(160deg,#f1f1ee,#dcdcd7)}
+.faq details{background:var(--card);border-radius:16px;margin-bottom:10px;padding:0 22px}
+.faq summary{list-style:none;cursor:pointer;padding:20px 0;font-weight:700;font-size:18px;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font:500 24px/1 Unbounded;transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--mut);padding-bottom:20px;max-width:70ch}
+.lead-form{background:var(--ink);color:#fff;border-radius:28px;padding:clamp(24px,4vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px}
+.lead-form h2{color:#fff}
+.lead-form .sub{color:#b8bdc0}
+.cfgsum{background:#24272a;border-radius:16px;padding:18px;font-size:15px;color:#d6dadc}
+.cfgsum b{color:#fff}
+form{display:grid;gap:10px;align-content:start}
+form input{background:#24272a;border:1.5px solid #34383c;color:#fff;border-radius:12px;padding:15px 16px;font:500 16px Manrope}
+form input:focus{outline:none;border-color:var(--acc)}
+form .btn{background:var(--acc)}form .btn:hover{background:#fff;color:var(--ink)}
+.ok{display:none;color:#9fe0b4;font-weight:600}
+footer{padding:40px 0 60px;color:var(--mut);font-size:14px}
+/* tilda overlay */
+.tb{position:absolute;left:var(--m);top:clamp(60px,7vw,100px);z-index:5;background:#2d7be5;color:#fff;font:700 12px Manrope;padding:5px 9px;border-radius:7px;opacity:0;transform:translateY(6px);transition:.3s var(--ease);pointer-events:none;white-space:nowrap}
+.hero .tb{top:6px}
+body.tilda .tb{opacity:1;transform:none}
+body.tilda [data-t]{outline:2px dashed #2d7be5;outline-offset:6px;border-radius:6px}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.js .rv.in{opacity:1;transform:none}
+@media(max-width:960px){nav{display:none}.hero,.lead-form{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.mats{grid-template-columns:1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}.tg span{display:none}header .btn{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#">ЛИНИЯ<span>.</span></a><nav><a href="#calc">Расчёт</a><a href="#steps">Сроки</a><a href="#mats">Материалы</a><a href="#faq">Вопросы</a></nav><label class="tg" id="tg"><i></i><span>Блоки Tilda</span></label><a class="btn" href="#form">Замер бесплатно</a></div></header>
+
+<div class="wrap">
+<div class="hero" id="calc" data-t>
+ <span class="tb">Zero Block · анимация по скроллу</span>
+ <div>
+  <h1>Кухня, рассчитанная <em>до сантиметра</em></h1>
+  <p class="lead">Двигайте длину, выбирайте фасад и столешницу - кухня собирается на глазах, а цена считается сразу. Без «узнайте у менеджера».</p>
+  <a class="btn" href="#form">Зафиксировать цену</a>
+  <div class="kp"><div><b>28</b>дней от замера до монтажа</div><div><b>5 лет</b>гарантии на корпус и фурнитуру</div><div><b>0%</b>рассрочка на 6 месяцев</div></div>
+ </div>
+ <div class="cfg">
+  <div class="iso"><span class="dim" id="dim">3,0 м · 5 модулей</span><svg id="svg" viewBox="0 0 800 500" aria-label="Схема кухни"></svg></div>
+  <div class="row"><b>Длина кухни</b><div class="len"><input type="range" id="L" min="180" max="480" step="60" value="300" aria-label="Длина"><output id="Lo">3,0 м</output></div></div>
+  <div class="row"><b>Фасады</b><div class="chips" id="F"></div></div>
+  <div class="row"><b>Столешница</b><div class="chips" id="W"></div></div>
+  <div class="row"><b>Верхние шкафы</b><div class="chips" id="U"><button class="on" data-v="1">С верхними</button><button data-v="0">Без верхних, полка</button></div></div>
+  <div class="sum"><div><small>Под ключ с замером, доставкой и монтажом</small><div class="price" id="P">0 ₽</div><div class="split" id="S"></div></div><a class="btn" href="#form">Хочу такую</a></div>
+ </div>
+</div>
+
+<section id="steps" data-t><span class="tb">T-блок «Этапы» + анимация полос</span>
+ <h2 class="rv">От замера до первого ужина - 28 дней</h2>
+ <p class="sub rv">Каждый этап с датой в договоре. Полоса - доля общего срока.</p>
+ <div class="steps">
+  <div class="st rv"><div class="d">1 <small>день</small></div><b>Замер</b><p>Приезжаем с лазерной рулеткой, сразу обсуждаем технику и розетки.</p><div class="bar"><i style="--w:4%"></i></div></div>
+  <div class="st rv"><div class="d">3 <small>дня</small></div><b>3D-проект</b><p>Показываем кухню в вашей комнате, правим, пока не понравится.</p><div class="bar"><i style="--w:11%"></i></div></div>
+  <div class="st rv"><div class="d">23 <small>дня</small></div><b>Производство</b><p>Собственный цех: раскрой, кромка, покраска эмали в камере.</p><div class="bar"><i style="--w:82%"></i></div></div>
+  <div class="st rv"><div class="d">1 <small>день</small></div><b>Монтаж</b><p>Ставим, подключаем, убираем за собой. Гарантия 5 лет.</p><div class="bar"><i style="--w:4%"></i></div></div>
+ </div>
+</section>
+
+<section id="mats" data-t><span class="tb">T-блок «Карточки» · 3 колонки</span>
+ <h2 class="rv">Три фасада - три бюджета</h2>
+ <p class="sub rv">Цена за погонный метр нижних и верхних шкафов, с фурнитурой Blum.</p>
+ <div class="mats">
+  <div class="mat rv"><div class="sw ldsp"></div><div class="t"><b>ЛДСП матовое</b><p>Практично, не боится влаги, 40 оттенков.</p><span>от 24 000 ₽/м</span></div></div>
+  <div class="mat rv"><div class="sw enamel"></div><div class="t"><b>Эмаль</b><p>Глубокий цвет по RAL, бархатистая поверхность.</p><span>от 42 000 ₽/м</span></div></div>
+  <div class="mat rv"><div class="sw oak"></div><div class="t"><b>Шпон дуба</b><p>Живая текстура, покрытие маслом с воском.</p><span>от 58 000 ₽/м</span></div></div>
+ </div>
+</section>
+
+<section id="faq" class="faq" data-t><span class="tb">T-блок «Вопросы» (аккордеон)</span>
+ <h2 class="rv">Частые вопросы</h2><div style="height:30px"></div>
+ <details class="rv"><summary>Цена в калькуляторе окончательная?</summary><p>Это цена по типовым модулям. После замера считаем точно по сантиметрам - разница обычно в пределах 5%, и фиксируем её в договоре.</p></details>
+ <details class="rv"><summary>Можно встроить мою технику?</summary><p>Да. Пришлите модели духовки, варочной панели и посудомойки - заложим ниши под их размеры.</p></details>
+ <details class="rv"><summary>Есть рассрочка?</summary><p>Да, 0% на 6 месяцев: предоплата 30%, остальное равными частями.</p></details>
+</section>
+
+<section id="form" data-t><span class="tb">Форма Tilda + поле «Калькулятор» · заявка в CRM</span>
+ <div class="lead-form rv">
+  <div><h2>Зафиксируем эту цену на 14 дней</h2><p class="sub">Оставьте телефон - перезвоним за 15 минут и запишем на бесплатный замер.</p><div class="cfgsum" id="cs"></div></div>
+  <form id="fm"><input required placeholder="Имя" aria-label="Имя"><input required type="tel" placeholder="+7 ___ ___-__-__" aria-label="Телефон"><button class="btn">Записаться на замер</button><p class="ok" id="ok">Спасибо! Заявка с вашей конфигурацией отправлена.</p></form>
+ </div>
+</section>
+<footer>Демо-лендинг: бренд, цены и сроки условные. Каждая секция собирается штатными блоками Tilda и Zero Block - включите «Блоки Tilda» вверху, чтобы увидеть разметку.</footer>
+</div>
+<script>
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.rv,.st').forEach(x=>io.observe(x));
+document.getElementById('tg').onclick=e=>{e.preventDefault();const t=document.getElementById('tg');t.classList.toggle('on');document.body.classList.toggle('tilda')};
+const FA=[{n:'ЛДСП',c:'#ecebe7',e:'#c9c8c2',p:24000},{n:'Эмаль шалфей',c:'#5d6b62',e:'#46524b',p:42000},{n:'Шпон дуба',c:'#b98b5e',e:'#94693f',p:58000}];
+const WO=[{n:'Ламинат',c:'#3a3c3e',p:4000},{n:'Кварц белый',c:'#f2f2ef',p:18000},{n:'Дуб массив',c:'#9a6a3e',p:12000}];
+let L=300,f=1,w=1,u=1;
+const chip=(el,arr,cur,set)=>{el.innerHTML=arr.map((x,i)=>`<button class="${i===cur?'on':''}"><s style="background:${x.c};box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)"></s>${x.n}</button>`).join('');[...el.children].forEach((b,i)=>b.onclick=()=>{[...el.children].forEach(x=>x.classList.toggle('on',x===b));set(i);draw()})};
+chip(document.getElementById('F'),FA,f,i=>f=i);chip(document.getElementById('W'),WO,w,i=>w=i);
+document.getElementById('U').onclick=e=>{const b=e.target.closest('button');if(!b)return;[...b.parentNode.children].forEach(x=>x.classList.toggle('on',x===b));u=+b.dataset.v;draw()};
+const C=Math.cos(Math.PI/6),Sn=Math.sin(Math.PI/6),K=.95;
+const P=(x,y,z)=>[(400+(x-y)*C*K-L*C*K/2+30).toFixed(1),(170+(x+y)*Sn*K-z*K-L*Sn*K/2+60).toFixed(1)];
+const poly=(pts,fill,st='rgba(0,0,0,.18)')=>`<polygon points="${pts.map(p=>P(...p).join(',')).join(' ')}" fill="${fill}" stroke="${st}" stroke-width="1"/>`;
+function shade(h,k){const n=parseInt(h.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;[r,g,b]=[r,g,b].map(v=>Math.max(0,Math.min(255,Math.round(v*k))));return `rgb(${r},${g},${b})`}
+let prevN=0;
+function draw(){
+ const n=L/60,fa=FA[f],wo=WO[w];let s='';
+ s+=poly([[0,0,0],[L,0,0],[L,0,260],[0,0,260]],'#eef0ee','none');
+ s+=poly([[0,0,0],[0,0,260],[0,90,260],[0,90,0]],'#e3e6e4','none');
+ s+=poly([[0,0,0],[L+40,0,0],[L+40,120,0],[0,120,0]],'#c8cdca','none');
+ s+=poly([[0,0,92],[L,0,92],[L,0,150],[0,0,150]],u?shade(wo.c,.92):'#d9dcda','rgba(0,0,0,.08)');
+ for(let i=0;i<n;i++){const x0=i*60,x1=x0+60,nw=i>=prevN?' new':'';let g='';
+  if(u){g+=poly([[x0,35,150],[x1,35,150],[x1,35,225],[x0,35,225]],fa.c);g+=poly([[x0,0,150],[x1,0,150],[x1,35,150],[x0,35,150]],shade(fa.c,.7));
+   g+=`<line x1="${P(x0+28,35,158)[0]}" y1="${P(x0+28,35,158)[1]}" x2="${P(x0+28,35,174)[0]}" y2="${P(x0+28,35,174)[1]}" stroke="${shade(fa.c,.55)}" stroke-width="2"/>`}
+  g+=poly([[x0,60,8],[x1,60,8],[x1,60,86],[x0,60,86]],fa.c);
+  g+=poly([[x0,60,0],[x1,60,0],[x1,60,8],[x0,60,8]],'#2a2c2e');
+  g+=`<line x1="${P(x0+8,60,80)[0]}" y1="${P(x0+8,60,80)[1]}" x2="${P(x0+52,60,80)[0]}" y2="${P(x0+52,60,80)[1]}" stroke="${shade(fa.c,.55)}" stroke-width="2"/>`;
+  if(i%2===0&&i<n-1)g+=poly([[x0,60,47],[x1,60,47],[x1,60,48],[x0,60,48]],shade(fa.c,.75),'none');
+  s+=`<g class="mod${nw}" style="transition-delay:${(i-prevN)*70}ms">${g}</g>`}
+ s+=poly([[0,0,86],[L,0,86],[L,62,86],[0,62,86]],wo.c);
+ s+=poly([[0,62,82],[L,62,82],[L,62,86],[0,62,86]],shade(wo.c,.75));
+ s+=poly([[L,0,0],[L,62,0],[L,62,86],[L,0,86]],shade(fa.c,.62));
+ if(u)s+=poly([[L,0,150],[L,35,150],[L,35,225],[L,0,225]],shade(fa.c,.62));
+ const sx=60*Math.floor(n/2)+10;s+=poly([[sx,14,86.5],[sx+40,14,86.5],[sx+40,48,86.5],[sx,48,86.5]],'#9aa1a3');
+ s+=`<ellipse cx="${P(70,30,87)[0]}" cy="${P(70,30,87)[1]}" rx="11" ry="6" fill="#222"/><ellipse cx="${P(95,30,87)[0]}" cy="${P(95,30,87)[1]}" rx="11" ry="6" fill="#222"/>`;
+ const svg=document.getElementById("svg");svg.innerHTML=s;const bb=svg.getBBox(),pd=40;svg.setAttribute("viewBox",`${bb.x-pd} ${bb.y-pd-20} ${bb.width+pd*2} ${bb.height+pd*2+20}`);
+ requestAnimationFrame(()=>requestAnimationFrame(()=>svg.querySelectorAll('.mod.new').forEach(g=>g.classList.remove('new'))));
+ prevN=n;
+ const m=L/100,total=Math.round((fa.p*(u?1:.62)+wo.p)*m+15000);
+ document.getElementById('Lo').textContent=document.getElementById('dim').textContent=m.toFixed(1).replace('.',',')+' м';
+ document.getElementById('dim').textContent+=` · ${n} модулей`;
+ tween(total);
+ document.getElementById('S').textContent=`или ${fmt(Math.round(total*.7/6))} ₽/мес · рассрочка 0% на 6 мес`;
+ document.getElementById('cs').innerHTML=`Ваша кухня: <b>${m.toFixed(1).replace('.',',')} м</b>, фасады <b>${fa.n.toLowerCase()}</b>, столешница <b>${wo.n.toLowerCase()}</b>, ${u?'с верхними шкафами':'без верхних шкафов'}.<br>Расчёт: <b>${fmt(total)} ₽</b> - уйдёт в заявку вместе с телефоном.`;
+}
+const fmt=v=>v.toLocaleString('ru-RU');let cur=0,raf;
+function tween(to){cancelAnimationFrame(raf);const from=cur,t0=performance.now();const st=t=>{const k=Math.min(1,(t-t0)/600),e=1-Math.pow(1-k,3);cur=Math.round(from+(to-from)*e);document.getElementById('P').textContent=fmt(cur)+' ₽';if(k<1)raf=requestAnimationFrame(st)};raf=requestAnimationFrame(st)}
+document.getElementById('L').oninput=e=>{L=+e.target.value;draw()};
+document.getElementById('fm').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block'};
+draw();
+</script>
+</body>
+</html>
